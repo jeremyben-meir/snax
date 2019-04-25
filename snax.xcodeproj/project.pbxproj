@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20A5E8D8114D4647B48D844E /* Pods_snax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E509ACD6BB142BA00D93B68C /* Pods_snax.framework */; };
 		21001816227230F200DD15D8 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21001815227230F200DD15D8 /* MenuItem.swift */; };
-		211E330322724ABF0070A901 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E330222724ABF0070A901 /* System.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
 		AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B1226C00A200A3E213 /* AppDelegate.swift */; };
 		AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B3226C00A200A3E213 /* ViewController.swift */; };
@@ -22,15 +22,12 @@
 		ACF0876F226C280C00F5976A /* RestaurantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */; };
 		ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08770226C286E00F5976A /* DetailViewController.swift */; };
 		ACF08773226C28B700F5976A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08772226C28B700F5976A /* RestaurantViewController.swift */; };
-		FABDC2347DA93F09E7FDDC3E /* Pods_snax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D6546BA6758E6C24964383 /* Pods_snax.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21001815227230F200DD15D8 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		211E330222724ABF0070A901 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = System.swift; path = "/Users/jeremyben-meir/Desktop/Snax/snax/snax/Models/System.swift"; sourceTree = "<absolute>"; };
 		216B808222725D8A0096998D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
-		99D6546BA6758E6C24964383 /* Pods_snax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
 		AC85F5AE226C00A200A3E213 /* snax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC85F5B1226C00A200A3E213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +43,7 @@
 		ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACF08770226C286E00F5976A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACF08772226C28B700F5976A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		E509ACD6BB142BA00D93B68C /* Pods_snax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABDC2347DA93F09E7FDDC3E /* Pods_snax.framework in Frameworks */,
+				20A5E8D8114D4647B48D844E /* Pods_snax.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +80,6 @@
 				21001815227230F200DD15D8 /* MenuItem.swift */,
 				ACF08762226C250200F5976A /* Restaurant.swift */,
 				ACF08764226C264700F5976A /* Filter.swift */,
-				211E330222724ABF0070A901 /* System.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,10 +97,10 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		90E643E641085A0D68F37931 /* Frameworks */ = {
+		5D1765A2DD9D2023996F8946 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99D6546BA6758E6C24964383 /* Pods_snax.framework */,
+				E509ACD6BB142BA00D93B68C /* Pods_snax.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,7 +120,7 @@
 				AC85F5B0226C00A200A3E213 /* snax */,
 				AC85F5AF226C00A200A3E213 /* Products */,
 				9436109DE02ECBE8AA309AA0 /* Pods */,
-				90E643E641085A0D68F37931 /* Frameworks */,
+				5D1765A2DD9D2023996F8946 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,7 +306,6 @@
 				ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */,
 				AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */,
 				21001816227230F200DD15D8 /* MenuItem.swift in Sources */,
-				211E330322724ABF0070A901 /* System.swift in Sources */,
 				ACF08773226C28B700F5976A /* RestaurantViewController.swift in Sources */,
 				AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */,
 			);
