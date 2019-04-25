@@ -16,5 +16,6 @@ class MenuItem {
     init(name: String, price: CGFloat){
         self.name = name
         self.price =  price
+        //
     }
 }
