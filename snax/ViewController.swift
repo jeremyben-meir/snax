@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     // ADDED FAT BUTTON
+    // ADDED LIST
     var filterCollection: UICollectionView!
     var restaurantCollection: UICollectionView!
     var filterArray: [Filter]! = []
