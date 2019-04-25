@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, GIDSignInUIDelegate {
 
     var image: UIImageView!
     var accountImage: UIImage!
@@ -17,7 +18,15 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = "My Account"
+        self.title = "My Account"        
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        let signInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        signInButton.center = view.center
+        view.addSubview(signInButton)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
         
         image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -56,14 +65,8 @@ class AccountViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func signOut(){
+        GIDSignIn.sharedInstance().signOut()
     }
-    */
 
 }
