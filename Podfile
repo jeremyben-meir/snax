@@ -8,7 +8,6 @@ target 'snax' do
   # Pods for snax
   pod 'Alamofire'
   pod 'SnapKit'
-  pod 'Firebase'
   pod 'GoogleSignIn'
 
 end

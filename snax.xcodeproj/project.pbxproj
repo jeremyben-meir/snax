@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		21001816227230F200DD15D8 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21001815227230F200DD15D8 /* MenuItem.swift */; };
-		211E32F9227247940070A901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211E32F8227247940070A901 /* GoogleService-Info.plist */; };
+		211E32FB2272480A0070A901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211E32FA2272480A0070A901 /* GoogleService-Info.plist */; };
+		211E330322724ABF0070A901 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E330222724ABF0070A901 /* System.swift */; };
 		AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B1226C00A200A3E213 /* AppDelegate.swift */; };
 		AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B3226C00A200A3E213 /* ViewController.swift */; };
 		AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC85F5B8226C00A300A3E213 /* Assets.xcassets */; };
@@ -26,7 +27,8 @@
 
 /* Begin PBXFileReference section */
 		21001815227230F200DD15D8 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		211E32F8227247940070A901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		211E32FA2272480A0070A901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		211E330222724ABF0070A901 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = System.swift; path = "/Users/jeremyben-meir/Desktop/Snax/snax/snax/Models/System.swift"; sourceTree = "<absolute>"; };
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		99D6546BA6758E6C24964383 /* Pods_snax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +60,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211E32FC227249DF0070A901 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */,
+				ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		211E32FE227249F10070A901 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		211E330022724A000070A901 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21001815227230F200DD15D8 /* MenuItem.swift */,
+				ACF08762226C250200F5976A /* Restaurant.swift */,
+				ACF08764226C264700F5976A /* Filter.swift */,
+				211E330222724ABF0070A901 /* System.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		211E330122724A080070A901 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC85F5B3226C00A200A3E213 /* ViewController.swift */,
+				ACF08770226C286E00F5976A /* DetailViewController.swift */,
+				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
+				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
+				ACF08772226C28B700F5976A /* RestaurantViewController.swift */,
+				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		90E643E641085A0D68F37931 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,19 +138,12 @@
 		AC85F5B0226C00A200A3E213 /* snax */ = {
 			isa = PBXGroup;
 			children = (
-				211E32F8227247940070A901 /* GoogleService-Info.plist */,
+				211E32FA2272480A0070A901 /* GoogleService-Info.plist */,
 				AC85F5B1226C00A200A3E213 /* AppDelegate.swift */,
-				AC85F5B3226C00A200A3E213 /* ViewController.swift */,
-				21001815227230F200DD15D8 /* MenuItem.swift */,
-				ACF08770226C286E00F5976A /* DetailViewController.swift */,
-				ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */,
-				ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */,
-				ACF08762226C250200F5976A /* Restaurant.swift */,
-				ACF08764226C264700F5976A /* Filter.swift */,
-				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
-				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
-				ACF08772226C28B700F5976A /* RestaurantViewController.swift */,
-				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
+				211E330122724A080070A901 /* Controllers */,
+				211E330022724A000070A901 /* Models */,
+				211E32FC227249DF0070A901 /* Cells */,
+				211E32FE227249F10070A901 /* Views */,
 				AC85F5B8226C00A300A3E213 /* Assets.xcassets */,
 				AC85F5BD226C00A300A3E213 /* Info.plist */,
 			);
@@ -178,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */,
-				211E32F9227247940070A901 /* GoogleService-Info.plist in Resources */,
+				211E32FB2272480A0070A901 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +254,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -230,9 +263,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -278,6 +309,7 @@
 				ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */,
 				AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */,
 				21001816227230F200DD15D8 /* MenuItem.swift in Sources */,
+				211E330322724ABF0070A901 /* System.swift in Sources */,
 				ACF08773226C28B700F5976A /* RestaurantViewController.swift in Sources */,
 				AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */,
 			);
