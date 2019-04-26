@@ -16,6 +16,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
+    //let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.delegate = self
         GMSServices.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
         GMSPlacesClient.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
+        
+        //locationManager.requestAlwaysAuthorization()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController()

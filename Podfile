@@ -11,6 +11,7 @@ target 'snax' do
   pod 'GoogleSignIn'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'CoreLocation'
 
 
 end
