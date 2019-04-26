@@ -18,7 +18,9 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = "My Account"        
+        self.title = "My Account"
+        
+        
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
@@ -68,5 +70,4 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
     @objc func signOut(){
         GIDSignIn.sharedInstance().signOut()
     }
-
 }
