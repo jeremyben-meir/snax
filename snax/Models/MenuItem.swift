@@ -14,6 +14,7 @@ enum ItemCategory {
     case lunch
     case dinner
     case side
+    case drink
 }
 class MenuItem {
     var name: String

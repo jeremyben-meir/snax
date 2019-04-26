@@ -50,6 +50,10 @@ class ViewController: UIViewController {
         
         let TavernaBanfiMenu = [MenuItem(name: "Statler Chicken", price: 25, description: "Potato Puree, Mushrooms, Cipollini Onions, Sun-dried tomato butter sauce" ,category: .dinner), MenuItem(name: "Salmon", price: 29, description: "Broccolini, Herbed Quinoa, Arugula, Smoked Tomato Hummus", category: .dinner), MenuItem(name: "Zucchini Noodles", price: 21, description: "Quinoa Crocchettes, Tomatoes, Broccolini, Dried Olive Miso, Broccoli Pesto, Pomodoro", category: .dinner), MenuItem(name: "Smoked Short Rib", price: 32, description: "Braised Italian Greens, Prosciutto, Sweet Potato Hash, Pickled Red Onion, Red Wine Jus", category: .dinner)]
         
+        let MattinsMenu = [MenuItem(name: "Turkey Club", price: 6.69, description: "Turkey breast, bacon, provolone, leaf lettuce, tomato, mayonnaise on a telera roll.", category: nil), MenuItem(name: "Chicken Bacon Ranch", price: 6.69, description: "Tomato, red onion, grilled chicken, bacon with ranch on a kariser roll.", category: nil ), MenuItem(name: "Chicken Club", price: 6.69, description: "Chicken breast, bacon, swiss cheese, leaf lettuce, tomato, mayonnaise on a sourdough bread", category: nil), MenuItem(name: "Tuna Melt", price: 6.49, description: "Swiss cheese melted on a tuna salad topped with leaf lettuce, tomato, on a multi grain bread.", category: nil), MenuItem(name: "Taco Bowl", price: 7.99, description: "lime brown rice, black beans, lettuce, salsa, guacamole, sour cream, chipotle lime chicken, tortilla chips, tomato, onion, jalepenos", category: nil)]
+        
+        let NastiesMenu = [MenuItem(name: "Buffalo Chicken Sub", price: 8.49, description: "Grilled or fried chicken,spicy buffalo sauce, blue cheese dressing, shredded lettuce", category: nil), MenuItem(name: "Chicken Parm", price: 8.49, description: "Grilled or fried chicken smothered in a marianara sauce, topped with melted mozzarella cheese", category: nil), MenuItem(name: "Southwest Chicken Sub", price: 8.49, description: "Grilled or fried chicken, pepperjack cheese, bacon, tomatoes, chipotle ranch dressing, shredded lettuce", category: nil), MenuItem(name: "Meatball Sub", price: 8.49, description: "Meatballs in marinara sauce, topped with melted mozzarella cheese" , category: nil)]
+        
         restaurantArray.append(Restaurant(image: UIImage(named: "TavernaBanfi")!, name: "Taverna Banfi", tags: ["Breakfast", "Lunch", "Dinner", "Italian"], price: 40, times: [
             [7, 0, 14, 0, 17, 30, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0],
             [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0]
@@ -58,13 +62,15 @@ class ViewController: UIViewController {
         restaurantArray.append(Restaurant(image: UIImage(named: "mattins")!, name: "Mattin's Cafe", tags: ["Breakfast", "Lunch", "American", "Sandwiches"], price: 6, times: [
             [0, 0, 0, 0], [7, 0, 22, 0], [7, 0, 20, 0], [7, 0, 20, 0],
             [7, 0, 20, 0], [7, 0, 17, 0], [0, 0, 0, 0]
-            ]))
+            ], menu: MattinsMenu))
+        
         restaurantArray.append(Restaurant(image: UIImage(named: "nasties")!, name: "Bear Necessities", tags: ["Breakfast", "Lunch", "Dinner", "American", "Sandwiches"], price: 10, times: [
             [10, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [8, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [8, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [10, 0, 24, 0, 0, 0, 2, 0]
-            ]))
+            ], menu: NastiesMenu))
+        
         restaurantArray.append(Restaurant(image: UIImage(named: "jennie")!, name: "Cafe Jennie", tags: ["Breakfast", "Lunch", "Sandwiches"], price: 15, times: [
             [0, 0, 0, 0], [8, 0, 18, 0], [8, 0, 18, 0], [8, 0, 18, 0],
             [8, 0, 18, 0], [8, 0, 18, 0], [10, 0, 17, 0]
