@@ -17,8 +17,9 @@ class Restaurant {
     var priceImage: UIImage?
     var times: [[Int]]
     var isOpen: Bool
+    var menu: [MenuItem]
     
-    init(image: UIImage, name: String, tags: [String], price: Int, times: [[Int]]){
+    init(image: UIImage, name: String, tags: [String], price: Int, times: [[Int]], menu: [MenuItem] = []){
         self.image = image
         self.name = name
         self.tags = tags
@@ -30,6 +31,7 @@ class Restaurant {
         } else {
             self.priceImage = UIImage(named: "d3")!
         }
+        self.menu = menu
         self.isOpen = true
         self.isOpen = checkIfOpen(time: times)
     }
@@ -51,4 +53,5 @@ class Restaurant {
             return false
         }
     }
+
 }

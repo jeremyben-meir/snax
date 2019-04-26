@@ -12,6 +12,7 @@
 		210D6C262272971C00349C9D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C252272971C00349C9D /* NetworkManager.swift */; };
 		210D6C282272985D00349C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C272272985D00349C9D /* User.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
+		AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */; };
 		AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B1226C00A200A3E213 /* AppDelegate.swift */; };
 		AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B3226C00A200A3E213 /* ViewController.swift */; };
 		AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC85F5B8226C00A300A3E213 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		ACF08767226C269900F5976A /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */; };
 		ACF0876F226C280C00F5976A /* RestaurantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */; };
 		ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08770226C286E00F5976A /* DetailViewController.swift */; };
-		ACF08773226C28B700F5976A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08772226C28B700F5976A /* RestaurantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +34,7 @@
 		216B808222725D8A0096998D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
+		AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		AC85F5AE226C00A200A3E213 /* snax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC85F5B1226C00A200A3E213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC85F5B3226C00A200A3E213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACF08770226C286E00F5976A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		ACF08772226C28B700F5976A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		E509ACD6BB142BA00D93B68C /* Pods_snax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +67,7 @@
 		211E32FC227249DF0070A901 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */,
 				ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */,
 				ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */,
 			);
@@ -99,7 +100,6 @@
 				ACF08770226C286E00F5976A /* DetailViewController.swift */,
 				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
 				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
-				ACF08772226C28B700F5976A /* RestaurantViewController.swift */,
 				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
 				ACBB5F9C227292A000B01D08 /* DeliveryViewController.swift */,
 			);
@@ -312,6 +312,7 @@
 				AC85F5D0226C055F00A3E213 /* CartViewController.swift in Sources */,
 				ACF08767226C269900F5976A /* FilterCollectionViewCell.swift in Sources */,
 				ACBB5F9D227292A000B01D08 /* DeliveryViewController.swift in Sources */,
+				AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */,
 				ACF08759226C1E4E00F5976A /* AccountViewController.swift in Sources */,
 				ACF08763226C250200F5976A /* Restaurant.swift in Sources */,
 				AC85F5CC226C02DC00A3E213 /* TabBarController.swift in Sources */,
@@ -322,7 +323,6 @@
 				AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */,
 				210D6C262272971C00349C9D /* NetworkManager.swift in Sources */,
 				21001816227230F200DD15D8 /* MenuItem.swift in Sources */,
-				ACF08773226C28B700F5976A /* RestaurantViewController.swift in Sources */,
 				AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

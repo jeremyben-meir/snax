@@ -9,14 +9,25 @@
 import Foundation
 import UIKit
 
+enum ItemCategory {
+    case breakfast
+    case lunch
+    case dinner
+    case side
+}
 class MenuItem {
     var name: String
     var price: CGFloat
+    var description: String
+    var category: ItemCategory?
     
-    init(name: String, price: CGFloat){
+    
+    init(name: String, price: CGFloat, description: String, category: ItemCategory?){
         self.name = name
         self.price =  price
-        //
-        //
+        self.description = description
+        if let itemcategory: ItemCategory = category{
+            self.category = itemcategory
+        }
     }
 }

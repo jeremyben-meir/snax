@@ -18,17 +18,20 @@ class DetailViewController: UIViewController {
     var tags: [String]
     var times: [[Int]]
     var isOpen: Bool
+    var menu: [MenuItem]
     
     var tableView: UITableView!
     let reuseidentifier = "menuItemCellReuse"
+    let cellHeight: CGFloat = 100
     
-    init(image: UIImage, name: String, tags: [String], priceImage: UIImage, times: [[Int]], isOpen: Bool){
+    init(image: UIImage, name: String, tags: [String], priceImage: UIImage, times: [[Int]], isOpen: Bool, menu: [MenuItem]){
         self.image = image
         self.name = name
         self.tags = tags
         self.priceImage = priceImage
         self.times = times
         self.isOpen = isOpen
+        self.menu = menu
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,6 +47,9 @@ class DetailViewController: UIViewController {
         
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: reuseidentifier)
         view.addSubview(tableView)
         
         
@@ -87,6 +93,7 @@ class DetailViewController: UIViewController {
         tagLabel.text = tagline
         view.addSubview(tagLabel)
         
+        
         setupConstraints()
     }
     
@@ -95,7 +102,7 @@ class DetailViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: tagLabel.topAnchor, constant: 10)
+            tableView.topAnchor.constraint(equalTo: tagLabel.topAnchor, constant: 20)
             ])
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -198,5 +205,30 @@ class DetailViewController: UIViewController {
             min = "0\(time[1])"
         }
         return "\(hr):\(min)\(ampm)"
+    }
+}
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menu.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("Section: \(indexPath.section), row \(indexPath.row)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! DetailTableViewCell
+        let menuitem = menu[indexPath.row]
+        cell.configure(for: menuitem)
+        return cell
+    }
+    
+}
+
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected, should pop up a modal controller to specific menu item")
     }
 }

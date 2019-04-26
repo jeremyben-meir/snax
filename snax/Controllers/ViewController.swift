@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     let restaurantCellReuseIdentifier = "restaurantCellReuseIdentifier"
     let padding: CGFloat = 8
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -47,10 +48,13 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterScreen))
         
+        let TavernaBanfiMenu = [MenuItem(name: "Statler Chicken", price: 25, description: "Potato Puree, Mushrooms, Cipollini Onions, Sun-dried tomato butter sauce" ,category: .dinner), MenuItem(name: "Salmon", price: 29, description: "Broccolini, Herbed Quinoa, Arugula, Smoked Tomato Hummus", category: .dinner), MenuItem(name: "Zucchini Noodles", price: 21, description: "Quinoa Crocchettes, Tomatoes, Broccolini, Dried Olive Miso, Broccoli Pesto, Pomodoro", category: .dinner), MenuItem(name: "Smoked Short Rib", price: 32, description: "Braised Italian Greens, Prosciutto, Sweet Potato Hash, Pickled Red Onion, Red Wine Jus", category: .dinner)]
+        
         restaurantArray.append(Restaurant(image: UIImage(named: "TavernaBanfi")!, name: "Taverna Banfi", tags: ["Breakfast", "Lunch", "Dinner", "Italian"], price: 40, times: [
             [7, 0, 14, 0, 17, 30, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0],
             [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0]
-            ]))
+            ], menu: TavernaBanfiMenu))
+            
         restaurantArray.append(Restaurant(image: UIImage(named: "mattins")!, name: "Mattin's Cafe", tags: ["Breakfast", "Lunch", "American", "Sandwiches"], price: 6, times: [
             [0, 0, 0, 0], [7, 0, 22, 0], [7, 0, 20, 0], [7, 0, 20, 0],
             [7, 0, 20, 0], [7, 0, 17, 0], [0, 0, 0, 0]
@@ -249,7 +253,7 @@ extension ViewController: UICollectionViewDelegate {
             restaurantCollection.reloadData()
         } else {
             let restaurant = filteredArray[indexPath.item]
-            let detailViewController = DetailViewController(image: restaurant.image!, name: restaurant.name, tags: restaurant.tags, priceImage: restaurant.priceImage!, times: restaurant.times, isOpen: restaurant.isOpen)
+            let detailViewController = DetailViewController(image: restaurant.image!, name: restaurant.name, tags: restaurant.tags, priceImage: restaurant.priceImage!, times: restaurant.times, isOpen: restaurant.isOpen, menu: restaurant.menu)
             navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
