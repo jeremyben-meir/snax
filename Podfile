@@ -9,5 +9,8 @@ target 'snax' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'GoogleSignIn'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
 
 end

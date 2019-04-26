@@ -20,11 +20,13 @@ class TabBarController: UITabBarController {
         accountViewController.tabBarItem = UITabBarItem.init(title: "Account", image: UIImage(named: "acct"), tag: 1)
         let restaurantViewController = ViewController()
         restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest"), tag: 2)
+        let deliveryViewController = DeliveryViewController()
+        deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "rest"), tag: 3)
         
         UITabBar.appearance().tintColor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
         
         
-        let viewControllerList = [accountViewController, restaurantViewController, cartViewController]
+        let viewControllerList = [accountViewController, restaurantViewController, cartViewController, deliveryViewController]
         //viewControllers = viewControllerList
         viewControllers = viewControllerList.map{ UINavigationController(rootViewController: $0) }
         UINavigationBar.appearance().prefersLargeTitles = true

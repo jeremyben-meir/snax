@@ -15,6 +15,7 @@
 		AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC85F5B8226C00A300A3E213 /* Assets.xcassets */; };
 		AC85F5CC226C02DC00A3E213 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5CB226C02DC00A3E213 /* TabBarController.swift */; };
 		AC85F5D0226C055F00A3E213 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5CF226C055F00A3E213 /* CartViewController.swift */; };
+		ACBB5F9D227292A000B01D08 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB5F9C227292A000B01D08 /* DeliveryViewController.swift */; };
 		ACF08759226C1E4E00F5976A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08758226C1E4E00F5976A /* AccountViewController.swift */; };
 		ACF08763226C250200F5976A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08762226C250200F5976A /* Restaurant.swift */; };
 		ACF08765226C264700F5976A /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF08764226C264700F5976A /* Filter.swift */; };
@@ -36,6 +37,7 @@
 		AC85F5BD226C00A300A3E213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC85F5CB226C02DC00A3E213 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AC85F5CF226C055F00A3E213 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		ACBB5F9C227292A000B01D08 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		ACF08758226C1E4E00F5976A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		ACF08762226C250200F5976A /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		ACF08764226C264700F5976A /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
 				ACF08772226C28B700F5976A /* RestaurantViewController.swift */,
 				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
+				ACBB5F9C227292A000B01D08 /* DeliveryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,12 +229,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-snax/Pods-snax-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +305,7 @@
 			files = (
 				AC85F5D0226C055F00A3E213 /* CartViewController.swift in Sources */,
 				ACF08767226C269900F5976A /* FilterCollectionViewCell.swift in Sources */,
+				ACBB5F9D227292A000B01D08 /* DeliveryViewController.swift in Sources */,
 				ACF08759226C1E4E00F5976A /* AccountViewController.swift in Sources */,
 				ACF08763226C250200F5976A /* Restaurant.swift in Sources */,
 				AC85F5CC226C02DC00A3E213 /* TabBarController.swift in Sources */,
