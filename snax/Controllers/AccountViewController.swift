@@ -70,4 +70,6 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
     @objc func signOut(){
         GIDSignIn.sharedInstance().signOut()
     }
+    
+    
 }

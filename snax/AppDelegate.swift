@@ -16,7 +16,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-    //let locationManager = CLLocationManager()
+    var user = [User]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -45,14 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if let error = error {
             print("\(error.localizedDescription)")
         } else {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
+            let idToken = user.authentication.idToken
+            NetworkManager.loginGet(idToken: idToken!, completion: { user in
+                print(user)
+            })
+            let userId = user.userID
             let fullName = user.profile.name
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-            // ...
+
+            NetworkManager.loginPost(userID: userId!, idToken: idToken!, name: fullName!, givenName: givenName!, familyName: familyName!, email: email!) { user in
+                print(user)
+            }
+            
         }
     }
     
