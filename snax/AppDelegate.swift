@@ -9,6 +9,8 @@
 import UIKit
 import GoogleSignIn
 import SnapKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
         GIDSignIn.sharedInstance()?.clientID = "325016939907-j3fnfhbt3abraoa87n293pvc6fh8atog.apps.googleusercontent.com"
         GIDSignIn.sharedInstance()?.delegate = self
+        GMSServices.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
+        GMSPlacesClient.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController()
