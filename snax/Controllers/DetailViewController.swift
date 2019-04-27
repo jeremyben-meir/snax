@@ -230,6 +230,7 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuItemViewController = MenuItemViewController()
+        menuItemViewController.modalPresentationCapturesStatusBarAppearance = true
         present(menuItemViewController, animated: true, completion: nil)
     }
 }
