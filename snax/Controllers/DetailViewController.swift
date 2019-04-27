@@ -230,6 +230,6 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuItemViewController = MenuItemViewController()
-        navigationController?.pushViewController(menuItemViewController, animated: true)
+        present(menuItemViewController, animated: true, completion: nil)
     }
 }
