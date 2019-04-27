@@ -13,6 +13,7 @@
 		210D6C282272985D00349C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C272272985D00349C9D /* User.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
 		AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */; };
+		AC50DABF2273D31100AF458A /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABE2273D31100AF458A /* MenuItemViewController.swift */; };
 		AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B1226C00A200A3E213 /* AppDelegate.swift */; };
 		AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B3226C00A200A3E213 /* ViewController.swift */; };
 		AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC85F5B8226C00A300A3E213 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
 		AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		AC50DABE2273D31100AF458A /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		AC85F5AE226C00A200A3E213 /* snax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC85F5B1226C00A200A3E213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC85F5B3226C00A200A3E213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				AC85F5B3226C00A200A3E213 /* ViewController.swift */,
 				ACF08770226C286E00F5976A /* DetailViewController.swift */,
+				AC50DABE2273D31100AF458A /* MenuItemViewController.swift */,
 				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
 				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
 				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
@@ -319,6 +322,7 @@
 				ACF08765226C264700F5976A /* Filter.swift in Sources */,
 				ACF0876F226C280C00F5976A /* RestaurantCollectionViewCell.swift in Sources */,
 				210D6C282272985D00349C9D /* User.swift in Sources */,
+				AC50DABF2273D31100AF458A /* MenuItemViewController.swift in Sources */,
 				ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */,
 				AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */,
 				210D6C262272971C00349C9D /* NetworkManager.swift in Sources */,

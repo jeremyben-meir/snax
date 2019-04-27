@@ -229,6 +229,7 @@ extension DetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected, should pop up a modal controller to specific menu item")
+        let menuItemViewController = MenuItemViewController()
+        navigationController?.pushViewController(menuItemViewController, animated: true)
     }
 }
