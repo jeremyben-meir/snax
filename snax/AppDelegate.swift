@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 GIDSignIn.sharedInstance()?.signInSilently()
             }
         } else {
-            window?.rootViewController = TabBarController()
+            window?.rootViewController = SignInViewController()
         }
         return true
     }
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             
             }
-            window?.rootViewController = SignUpViewController()
+            window?.rootViewController = TabBarController()
         }
     
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
