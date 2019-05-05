@@ -11,6 +11,8 @@ import UIKit
 class MenuItemViewController: UIViewController {
     
     var goBackButton: UIButton!
+    var addtoCartButton: UIButton!
+    let snaxcolor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,14 @@ class MenuItemViewController: UIViewController {
         goBackButton.addTarget(self, action: #selector(dismissViewControllerAndSaveText), for: .touchUpInside)
         view.addSubview(goBackButton)
         
+        addtoCartButton = UIButton()
+        addtoCartButton.translatesAutoresizingMaskIntoConstraints = false
+        addtoCartButton.setTitle("Add to cart", for: .normal)
+        addtoCartButton.setTitleColor(.white, for: .normal)
+        addtoCartButton.backgroundColor = snaxcolor
+        addtoCartButton.addTarget(self, action: #selector(dismissViewControllerAndAddToCart), for: .touchUpInside)
+        view.addSubview(addtoCartButton)
+        
         setupConstraints()
 
         // Do any additional setup after loading the view.
@@ -34,8 +44,20 @@ class MenuItemViewController: UIViewController {
             goBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
             goBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
             ])
+        NSLayoutConstraint.activate([
+            addtoCartButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:2),
+            addtoCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            addtoCartButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            addtoCartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            addtoCartButton.widthAnchor.constraint(equalTo: view.widthAnchor)])
+
     }
     @objc func dismissViewControllerAndSaveText(){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissViewControllerAndAddToCart(){
+        
         dismiss(animated: true, completion: nil)
     }
 
