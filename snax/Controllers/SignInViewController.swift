@@ -15,7 +15,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         
         imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "generic_icon")
         view.addSubview(imageView)
@@ -35,7 +35,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             imageView.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -10),
-            imageView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            imageView.widthAnchor.constraint(equalToConstant: 150)
             ])
     }
 }
