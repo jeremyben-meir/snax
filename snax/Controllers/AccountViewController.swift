@@ -73,6 +73,8 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
     
     @objc func signOut(){
         GIDSignIn.sharedInstance().signOut()
+        let signInVC = SignInViewController()
+        present(signInVC, animated: true, completion: nil)
     }
     
     
