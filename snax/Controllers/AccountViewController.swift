@@ -12,16 +12,35 @@ import GoogleSignIn
 
 class AccountViewController: UIViewController, GIDSignInUIDelegate {
 
+    
     var image: UIImageView!
     var accountImage: UIImage!
     var nameLabel: UILabel!
+    
+    var email: String
+    var firstName: String
+    var lastName: String
+    
+    init(email: String, firstName: String, lastName: String) {
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.title = "My Account"
         
-        
+//        NetworkManager.loginGet(email: email, completion: { user in
+//            email = user?.email
+//            firstName = user?.firstName
+//            lastName = user.lastName
+//        })
         
         //GIDSignIn.sharedInstance().uiDelegate = self
         
@@ -44,6 +63,7 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.textColor = .black
+        nameLabel.text = firstName + " " + lastName
         nameLabel.font =  UIFont(name: "Helvetica Neue", size: 1)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 35)
         view.addSubview(nameLabel)

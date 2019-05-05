@@ -13,6 +13,7 @@ class NetworkManager {
     
     private static let restaurantEndpoint = "http://35.236.231.84/api/snax/restaurants/"
     private static let createUserEndpoint = "http://35.236.231.84/api/snax/users/"
+    private static let getUserEndpoint = "http://35.236.231.84/api/snax/user/"
     
     //RestaurantMenuItemDataReponse is a list of menu items
     //Gets the list of menu items for the restaurant named name
@@ -33,16 +34,19 @@ class NetworkManager {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                print("create error")
             }
         }
     }
     
     
-    static func createUserPost(name: String, completion: @escaping (User) -> Void) {
+    static func createUserPost(firstName: String, lastName: String, email: String, completion: @escaping (User) -> Void) {
         let parameters: [String: Any] = [
-            "name": name
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email
         ]
-        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData
+        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).validate().responseData
             { (response) in
             switch response.result {
             case .success(let data):
@@ -51,14 +55,14 @@ class NetworkManager {
                 }
                 let jsonDecoder = JSONDecoder()
                 if let response = try? jsonDecoder.decode(CreateUserResponse.self, from: data) {
-                    let user = response.data
-                    completion(user)
-                    print("received user with id \(user.id)")
+                    completion(response.data)
+                    print("received user with id \(response.data.id)")
                 } else {
                     print("Invalid Response Data")
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                print("BOY")
             }
         }
     }
@@ -86,43 +90,24 @@ class NetworkManager {
     
     
     
-    static func loginPost(userID: String, idToken: String, name: String, givenName: String, familyName: String, email: String, completion: @escaping (User) -> Void) {
-        let parameters: [String: Any] = [
-            "userId": userID,
-            "idToken": idToken,
-            "fullName": name,
-            "givenName": givenName,
-            "familyName": familyName,
-            "email": email
-        ]
-        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
-            switch response.result {
-            case .success(let data):
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                    print(json)
-                }
-                let jsonDecoder = JSONDecoder()
-                if let user = try? jsonDecoder.decode(User.self, from: data) {
-                    completion(user)
-                } else {
-                    print("Invalid Response Data")
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-//    static func loginGet(idToken: String, completion: @escaping ([User]) -> Void) {
-//        Alamofire.request(endpoint, method: .get).validate().responseData { (response) in
+//    static func loginPost(userID: String, idToken: String, name: String, givenName: String, familyName: String, email: String, completion: @escaping (User) -> Void) {
+//        let parameters: [String: Any] = [
+//            "userId": userID,
+//            "idToken": idToken,
+//            "fullName": name,
+//            "givenName": givenName,
+//            "familyName": familyName,
+//            "email": email
+//        ]
+//        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
 //            switch response.result {
 //            case .success(let data):
 //                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
 //                    print(json)
 //                }
 //                let jsonDecoder = JSONDecoder()
-//                if let user = try? jsonDecoder.decode(UserResponse.self, from: data) {
-//                    completion(user.data.users)
+//                if let user = try? jsonDecoder.decode(User.self, from: data) {
+//                    completion(user)
 //                } else {
 //                    print("Invalid Response Data")
 //                }
@@ -131,5 +116,25 @@ class NetworkManager {
 //            }
 //        }
 //    }
-//}
+    
+    static func loginGet(email: String, completion: @escaping (User?) -> Void) {
+        Alamofire.request("http://35.236.231.84/api/snax/user/\(email)", method: .get).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                let jsonDecoder = JSONDecoder()
+                if let response = try? jsonDecoder.decode(GetUserResponse.self, from: data) {
+                    completion(response.data)
+                } else {
+                    print("Invalid Response Data")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                print("get error")
+                completion(nil)
+            }
+        }
+    }
 }

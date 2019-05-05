@@ -12,14 +12,28 @@ protocol CreateNewUserDelegate: class{
     func createNewUser(user: User) -> User
 }
 class TabBarController: UITabBarController {
-
+    
+    var email: String
+    var firstName: String
+    var lastName: String
+    
+    init(email: String, firstName: String, lastName: String) {
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         let cartViewController = CartViewController()
         cartViewController.tabBarItem = UITabBarItem.init(title: "My Cart", image: UIImage(named: "cart"), tag: 0)
-        let accountViewController = AccountViewController()
+        let accountViewController = AccountViewController(email: email, firstName: firstName, lastName: lastName)
         accountViewController.tabBarItem = UITabBarItem.init(title: "Account", image: UIImage(named: "acct"), tag: 1)
         let restaurantViewController = ViewController()
         restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest"), tag: 2)
