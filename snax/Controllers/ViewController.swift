@@ -48,63 +48,64 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterScreen))
         
-        let TavernaBanfiMenu = [MenuItem(name: "Statler Chicken", price: 25, description: "Potato Puree, Mushrooms, Cipollini Onions, Sun-dried tomato butter sauce" ,category: .dinner), MenuItem(name: "Salmon", price: 29, description: "Broccolini, Herbed Quinoa, Arugula, Smoked Tomato Hummus", category: .dinner), MenuItem(name: "Zucchini Noodles", price: 21, description: "Quinoa Crocchettes, Tomatoes, Broccolini, Dried Olive Miso, Broccoli Pesto, Pomodoro", category: .dinner), MenuItem(name: "Smoked Short Rib", price: 32, description: "Braised Italian Greens, Prosciutto, Sweet Potato Hash, Pickled Red Onion, Red Wine Jus", category: .dinner)]
+        //let TavernaBanfiMenu = [MenuItem(name: "Statler Chicken", price: 25, description: "Potato Puree, Mushrooms, Cipollini Onions, Sun-dried tomato butter sauce" ,category: .dinner), MenuItem(name: "Salmon", price: 29, description: "Broccolini, Herbed Quinoa, Arugula, Smoked Tomato Hummus", category: .dinner), MenuItem(name: "Zucchini Noodles", price: 21, description: "Quinoa Crocchettes, Tomatoes, Broccolini, Dried Olive Miso, Broccoli Pesto, Pomodoro", category: .dinner), MenuItem(name: "Smoked Short Rib", price: 32, description: "Braised Italian Greens, Prosciutto, Sweet Potato Hash, Pickled Red Onion, Red Wine Jus", category: .dinner)]
         
-        let MattinsMenu = [MenuItem(name: "Turkey Club", price: 6.69, description: "Turkey breast, bacon, provolone, leaf lettuce, tomato, mayonnaise on a telera roll.", category: nil), MenuItem(name: "Chicken Bacon Ranch", price: 6.69, description: "Tomato, red onion, grilled chicken, bacon with ranch on a kariser roll.", category: nil ), MenuItem(name: "Chicken Club", price: 6.69, description: "Chicken breast, bacon, swiss cheese, leaf lettuce, tomato, mayonnaise on a sourdough bread", category: nil), MenuItem(name: "Tuna Melt", price: 6.49, description: "Swiss cheese melted on a tuna salad topped with leaf lettuce, tomato, on a multi grain bread.", category: nil), MenuItem(name: "Taco Bowl", price: 7.99, description: "lime brown rice, black beans, lettuce, salsa, guacamole, sour cream, chipotle lime chicken, tortilla chips, tomato, onion, jalepenos", category: nil)]
+        //let MattinsMenu = [MenuItem(name: "Turkey Club", price: 6.69, description: "Turkey breast, bacon, provolone, leaf lettuce, tomato, mayonnaise on a telera roll.", category: nil), MenuItem(name: "Chicken Bacon Ranch", price: 6.69, description: "Tomato, red onion, grilled chicken, bacon with ranch on a kariser roll.", category: nil ), MenuItem(name: "Chicken Club", price: 6.69, description: "Chicken breast, bacon, swiss cheese, leaf lettuce, tomato, mayonnaise on a sourdough bread", category: nil), MenuItem(name: "Tuna Melt", price: 6.49, description: "Swiss cheese melted on a tuna salad topped with leaf lettuce, tomato, on a multi grain bread.", category: nil), MenuItem(name: "Taco Bowl", price: 7.99, description: "lime brown rice, black beans, lettuce, salsa, guacamole, sour cream, chipotle lime chicken, tortilla chips, tomato, onion, jalepenos", category: nil)]
         
-        let NastiesMenu = [MenuItem(name: "Buffalo Chicken Sub", price: 8.49, description: "Grilled or fried chicken,spicy buffalo sauce, blue cheese dressing, shredded lettuce", category: nil), MenuItem(name: "Chicken Parm", price: 8.49, description: "Grilled or fried chicken smothered in a marianara sauce, topped with melted mozzarella cheese", category: nil), MenuItem(name: "Southwest Chicken Sub", price: 8.49, description: "Grilled or fried chicken, pepperjack cheese, bacon, tomatoes, chipotle ranch dressing, shredded lettuce", category: nil), MenuItem(name: "Meatball Sub", price: 8.49, description: "Meatballs in marinara sauce, topped with melted mozzarella cheese" , category: nil)]
+       // let NastiesMenu = [MenuItem(name: "Buffalo Chicken Sub", price: 8.49, description: "Grilled or fried chicken,spicy buffalo sauce, blue cheese dressing, shredded lettuce", category: nil), MenuItem(name: "Chicken Parm", price: 8.49, description: "Grilled or fried chicken smothered in a marianara sauce, topped with melted mozzarella cheese", category: nil), MenuItem(name: "Southwest Chicken Sub", price: 8.49, description: "Grilled or fried chicken, pepperjack cheese, bacon, tomatoes, chipotle ranch dressing, shredded lettuce", category: nil), MenuItem(name: "Meatball Sub", price: 8.49, description: "Meatballs in marinara sauce, topped with melted mozzarella cheese" , category: nil)]
         
         restaurantArray.append(Restaurant(image: UIImage(named: "TavernaBanfi")!, name: "Taverna Banfi", tags: ["Breakfast", "Lunch", "Dinner", "Italian"], price: 40, times: [
             [7, 0, 14, 0, 17, 30, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0],
             [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0], [7, 0, 21, 0]
-            ], menu: TavernaBanfiMenu))
+            ], id:0
+            ))
             
         restaurantArray.append(Restaurant(image: UIImage(named: "mattins")!, name: "Mattin's Cafe", tags: ["Breakfast", "Lunch", "American", "Sandwiches"], price: 6, times: [
             [0, 0, 0, 0], [7, 0, 22, 0], [7, 0, 20, 0], [7, 0, 20, 0],
             [7, 0, 20, 0], [7, 0, 17, 0], [0, 0, 0, 0]
-            ], menu: MattinsMenu))
-        
+            ], id:1
+            ))
         restaurantArray.append(Restaurant(image: UIImage(named: "nasties")!, name: "Bear Necessities", tags: ["Breakfast", "Lunch", "Dinner", "American", "Sandwiches"], price: 10, times: [
             [10, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [8, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [8, 0, 24, 0, 0, 0, 2, 0], [8, 0, 24, 0, 0, 0, 2, 0],
             [10, 0, 24, 0, 0, 0, 2, 0]
-            ], menu: NastiesMenu))
-        
+            ], id:2
+            ))
         restaurantArray.append(Restaurant(image: UIImage(named: "jennie")!, name: "Cafe Jennie", tags: ["Breakfast", "Lunch", "Sandwiches"], price: 15, times: [
             [0, 0, 0, 0], [8, 0, 18, 0], [8, 0, 18, 0], [8, 0, 18, 0],
             [8, 0, 18, 0], [8, 0, 18, 0], [10, 0, 17, 0]
-            ]))
+            ], id:3))
         restaurantArray.append(Restaurant(image: UIImage(named: "ctb")!, name: "Collegetown Bagels", tags: ["Breakfast", "Lunch", "Dinner", "Sandwiches", "Desserts"], price: 15, times: [
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],
             [6, 45, 24, 0, 0, 0, 1, 30]
-            ]))
+            ], id:4))
         restaurantArray.append(Restaurant(image: UIImage(named: "plumtree")!, name: "Plum Tree", tags: ["Lunch", "Dinner", "Japanese"], price: 30, times: [
             [12, 0, 15, 0, 17, 0, 22, 0], [11, 30, 14, 30, 17, 0, 22, 0],
             [11, 30, 14, 30, 17, 0, 22, 0], [17, 0, 22, 0],
             [11, 30, 14, 30, 17, 0, 22, 30], [11, 30, 14, 30, 17, 0, 23, 00],
             [12, 0, 15, 0, 17, 0, 23, 0]
-            ]))
+            ], id:5))
         restaurantArray.append(Restaurant(image: UIImage(named: "dairy")!, name: "Cornell Dairy Bar", tags: ["Breakfast", "Lunch", "Sandwiches", "Desserts"], price: 15, times: [
             [0, 0, 0, 0], [8, 30, 18, 0], [8, 30, 18, 0], [8, 30, 18, 0],
             [8, 30, 18, 0], [8, 30, 18, 0], [0, 0, 0, 0]
-            ]))
+            ], id:6))
         restaurantArray.append(Restaurant(image: UIImage(named: "alehouse")!, name: "Ithaca Ale House", tags: ["Lunch", "Dinner", "American"], price: 15, times: [
             [9, 0, 24, 0, 0, 0, 1, 0], [11, 0, 24, 0, 0, 0, 1, 0],
             [11, 0, 24, 0, 0, 0, 1, 0], [11, 0, 24, 0, 0, 0, 1, 0],
             [11, 0, 24, 0, 0, 0, 1, 0], [11, 0, 24, 0, 0, 0, 1, 0],
             [11, 0, 24, 0]
-            ]))
+            ], id:7))
         restaurantArray.append(Restaurant(image: UIImage(named: "fourseasons")!, name: "Four Seasons", tags: ["Lunch", "Dinner", "Korean"], price: 15, times: [
             [11, 0, 22, 0], [11, 0, 22, 0], [11, 0, 22, 0], [11, 0, 22, 0],
             [11, 0, 22, 0], [11, 0, 22, 0], [11, 0, 22, 0]
-            ]))
+            ], id: 8))
         restaurantArray.append(Restaurant(image: UIImage(named: "saigon")!, name: "Saigon Kitchen", tags: ["Lunch", "Dinner", "Vietnamese"], price: 15, times: [
             [11, 30, 21, 30], [0, 0, 0, 0], [11, 30, 21, 30], [11, 30, 21, 30],
             [11, 30, 21, 30], [11, 30, 22, 0], [11, 30, 22, 0]
-            ]))
+            ], id:9))
         
         filteredArray = restaurantArray
         

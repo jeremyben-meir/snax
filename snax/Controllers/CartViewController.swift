@@ -12,7 +12,9 @@ class CartViewController: UIViewController {
     
     let shoppingcart = UIImage(named: "cart")
     
+    let snaxcolor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
     var tableView: UITableView!
+    var placeOrderButton: UIButton!
     let cartreuseidentifier = "cartItemCellReuse"
 
     override func viewDidLoad() {
@@ -24,6 +26,14 @@ class CartViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
+        placeOrderButton = UIButton()
+        placeOrderButton.translatesAutoresizingMaskIntoConstraints = false
+        placeOrderButton.setTitle("Place Order", for: .normal)
+        placeOrderButton.setTitleColor(snaxcolor, for: .normal)
+        placeOrderButton.addTarget(self, action: #selector(placeOrder), for: .touchUpInside)
+        view.addSubview(placeOrderButton)
+        
+        
         setupConstraints()
         
        
@@ -34,8 +44,16 @@ class CartViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
+            ])
+        NSLayoutConstraint.activate([
+            placeOrderButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            placeOrderButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            placeOrderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            placeOrderButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20)
+            
+
             ])
     }
 
@@ -48,5 +66,9 @@ class CartViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func placeOrder(){
+        
+    }
+    
 
 }

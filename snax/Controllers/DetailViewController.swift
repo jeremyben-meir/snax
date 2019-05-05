@@ -95,6 +95,7 @@ class DetailViewController: UIViewController {
         
         
         setupConstraints()
+        getMenuItems(name: name)
     }
     
     func setupConstraints() {
@@ -129,6 +130,15 @@ class DetailViewController: UIViewController {
             tagLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: 1)
             ])
         
+    }
+    
+    func getMenuItems(name: String){
+        NetworkManager.getRestaurantMenuItems(name: name) { (menuitemArray) in
+            self.menu = menuitemArray
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+        }
+        }
     }
     
     func getTimeLeft() -> String{
@@ -208,6 +218,9 @@ class DetailViewController: UIViewController {
     }
 }
 
+
+
+
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu.count
@@ -229,6 +242,7 @@ extension DetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Menu item was selected")
         let menuItemViewController = MenuItemViewController()
         menuItemViewController.modalPresentationCapturesStatusBarAppearance = true
         present(menuItemViewController, animated: true, completion: nil)

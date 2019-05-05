@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol CreateNewUserDelegate: class{
+    func createNewUser(user: User) -> User
+}
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
@@ -46,4 +49,12 @@ class TabBarController: UITabBarController {
     }
     */
 
+}
+
+extension TabBarController: CreateNewUserDelegate {
+    func createNewUser(user: User) -> User{
+        return user
+    }
+    
+    
 }

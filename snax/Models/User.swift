@@ -8,18 +8,19 @@
 import Foundation
 
 struct User: Codable {
-    var userId: String
-    var idToken: String
-    var fullName: String
-    var givenName: String
-    var familyName: String
-    var email: String
+    var id: Int
+    var name: String
+    var orders: Int
+    
+    
+//
+//    var email: String
+//    var idToken: String
+//    var fullName: String
+//    var givenName: String
+//    var familyName: String
 }
 
-struct UserResponse: Codable {
-    var data: UserDataResponse
-}
-
-struct UserDataResponse: Codable {
-    var users: [User]
+struct CreateUserResponse: Codable {
+    var data: User
 }

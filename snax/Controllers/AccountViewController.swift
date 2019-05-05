@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 
+
 class AccountViewController: UIViewController, GIDSignInUIDelegate {
 
     var image: UIImageView!
@@ -22,11 +23,11 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
         
         
         
-        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance().uiDelegate = self
         
-        let signInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        signInButton.center = view.center
-        view.addSubview(signInButton)
+//        let signInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+//        signInButton.center = view.center
+//        view.addSubview(signInButton)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
         
@@ -43,7 +44,6 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.textColor = .black
-        nameLabel.text = "Jeremy Ben-Meir"
         nameLabel.font =  UIFont(name: "Helvetica Neue", size: 1)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 35)
         view.addSubview(nameLabel)
@@ -66,10 +66,16 @@ class AccountViewController: UIViewController, GIDSignInUIDelegate {
             ])
         
     }
-
+    
+    func changeTextLabel(newstring:String) {
+        nameLabel.text = newstring
+    }
+    
     @objc func signOut(){
         GIDSignIn.sharedInstance().signOut()
     }
     
     
 }
+
+

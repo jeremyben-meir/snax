@@ -23,50 +23,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
         GIDSignIn.sharedInstance()?.clientID = "325016939907-j3fnfhbt3abraoa87n293pvc6fh8atog.apps.googleusercontent.com"
         GIDSignIn.sharedInstance()?.delegate = self
+        
+        
         GMSServices.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
         GMSPlacesClient.provideAPIKey("AIzaSyANVgwUJFNUpIszq7kiDqy9OzjopxFICNE")
         
-        //locationManager.requestAlwaysAuthorization()
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle:nil).instantiateInitialViewController() ?? UIViewController()
+        //window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+        
+        if GIDSignIn.sharedInstance().hasAuthInKeychain(){
+            DispatchQueue.main.async {
+                GIDSignIn.sharedInstance()?.signInSilently()
+            }
+        } else {
+            window?.rootViewController = TabBarController()
+        }
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url as URL?,
-                                                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                 annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            let idToken = user.authentication.idToken
-            NetworkManager.loginGet(idToken: idToken!, completion: { user in
-                print(user)
-            })
-            let userId = user.userID
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-
-            NetworkManager.loginPost(userID: userId!, idToken: idToken!, name: fullName!, givenName: givenName!, familyName: familyName!, email: email!) { user in
-                print(user)
-            }
-            
+        func getUsername(email: String) -> String {
+            let components = email.components(separatedBy: "@")
+            return components[0]
         }
-    }
+   
+        func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            
+            }
+            window?.rootViewController = SignUpViewController()
+        }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-        print("signed out")
-    }
+        func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+        }
     
+        func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        }
+
+
+//ORIGINAL CODE
+//
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url as URL?,
+//                                                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//                                                 annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+//              withError error: Error!) {
+//        if let error = error {
+//            print("\(error.localizedDescription)")
+//        } else {
+//            window?.rootViewController = TabBarController()
+//
+//            let idToken = user.authentication.idToken
+//            //NetworkManager.loginGet(idToken: idToken!, completion: { user in
+//                //print(user)
+//            //})
+//            let userId = user.userID
+//            let fullName = user.profile.name
+//            let givenName = user.profile.givenName
+//            let familyName = user.profile.familyName
+//            let email = user.profile.email
+//
+//            NetworkManager.loginPost(userID: userId!, idToken: idToken!, name: fullName!, givenName: givenName!, familyName: familyName!, email: email!) { user in
+//                print(user)
+//            }
+//
+//        }
+//    }
+//
+//
+//
+//
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+//              withError error: Error!) {
+//        print("signed out")
+//    }
+//
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

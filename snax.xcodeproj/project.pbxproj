@@ -12,6 +12,9 @@
 		210D6C262272971C00349C9D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C252272971C00349C9D /* NetworkManager.swift */; };
 		210D6C282272985D00349C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C272272985D00349C9D /* User.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
+		AC4B5055227E87F700ED8193 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B5054227E87F700ED8193 /* SignInViewController.swift */; };
+		AC4B5058227E92B600ED8193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4B5056227E92B500ED8193 /* LaunchScreen.storyboard */; };
+		AC4B505A227EA05000ED8193 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B5059227EA05000ED8193 /* SignUpViewController.swift */; };
 		AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */; };
 		AC50DABF2273D31100AF458A /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABE2273D31100AF458A /* MenuItemViewController.swift */; };
 		AC85F5B2226C00A200A3E213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85F5B1226C00A200A3E213 /* AppDelegate.swift */; };
@@ -35,6 +38,9 @@
 		216B808222725D8A0096998D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
+		AC4B5054227E87F700ED8193 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		AC4B5057227E92B500ED8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../Downloads/FirebaseChatStarter/FirebaseChatStarter/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC4B5059227EA05000ED8193 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		AC50DABE2273D31100AF458A /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		AC85F5AE226C00A200A3E213 /* snax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snax.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +92,7 @@
 		211E330022724A000070A901 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC4B5056227E92B500ED8193 /* LaunchScreen.storyboard */,
 				210D6C252272971C00349C9D /* NetworkManager.swift */,
 				210D6C272272985D00349C9D /* User.swift */,
 				21001815227230F200DD15D8 /* MenuItem.swift */,
@@ -99,12 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				AC85F5B3226C00A200A3E213 /* ViewController.swift */,
+				AC4B5059227EA05000ED8193 /* SignUpViewController.swift */,
 				ACF08770226C286E00F5976A /* DetailViewController.swift */,
 				AC50DABE2273D31100AF458A /* MenuItemViewController.swift */,
 				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
 				ACF08758226C1E4E00F5976A /* AccountViewController.swift */,
 				AC85F5CF226C055F00A3E213 /* CartViewController.swift */,
 				ACBB5F9C227292A000B01D08 /* DeliveryViewController.swift */,
+				AC4B5054227E87F700ED8193 /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4B5058227E92B600ED8193 /* LaunchScreen.storyboard in Resources */,
 				AC85F5B9226C00A300A3E213 /* Assets.xcassets in Resources */,
 				216B808322725D8A0096998D /* credentials.plist in Resources */,
 			);
@@ -318,7 +328,9 @@
 				AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */,
 				ACF08759226C1E4E00F5976A /* AccountViewController.swift in Sources */,
 				ACF08763226C250200F5976A /* Restaurant.swift in Sources */,
+				AC4B505A227EA05000ED8193 /* SignUpViewController.swift in Sources */,
 				AC85F5CC226C02DC00A3E213 /* TabBarController.swift in Sources */,
+				AC4B5055227E87F700ED8193 /* SignInViewController.swift in Sources */,
 				ACF08765226C264700F5976A /* Filter.swift in Sources */,
 				ACF0876F226C280C00F5976A /* RestaurantCollectionViewCell.swift in Sources */,
 				210D6C282272985D00349C9D /* User.swift in Sources */,
@@ -332,6 +344,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC4B5056227E92B500ED8193 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC4B5057227E92B500ED8193 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AC85F5BE226C00A300A3E213 /* Debug */ = {
