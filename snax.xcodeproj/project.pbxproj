@@ -13,7 +13,6 @@
 		210D6C282272985D00349C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C272272985D00349C9D /* User.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
 		AC4B5055227E87F700ED8193 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B5054227E87F700ED8193 /* SignInViewController.swift */; };
-		AC4B505A227EA05000ED8193 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B5059227EA05000ED8193 /* SignUpViewController.swift */; };
 		AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */; };
 		AC50DABF2273D31100AF458A /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABE2273D31100AF458A /* MenuItemViewController.swift */; };
 		AC71D5A9227F650400DB5D39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC71D5A8227F650400DB5D39 /* LaunchScreen.storyboard */; };
@@ -39,7 +38,6 @@
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4B5054227E87F700ED8193 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		AC4B5059227EA05000ED8193 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		AC50DABE2273D31100AF458A /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		AC71D5A8227F650400DB5D39 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				AC85F5B3226C00A200A3E213 /* ViewController.swift */,
-				AC4B5059227EA05000ED8193 /* SignUpViewController.swift */,
 				ACF08770226C286E00F5976A /* DetailViewController.swift */,
 				AC50DABE2273D31100AF458A /* MenuItemViewController.swift */,
 				AC85F5CB226C02DC00A3E213 /* TabBarController.swift */,
@@ -328,7 +325,6 @@
 				AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */,
 				ACF08759226C1E4E00F5976A /* AccountViewController.swift in Sources */,
 				ACF08763226C250200F5976A /* Restaurant.swift in Sources */,
-				AC4B505A227EA05000ED8193 /* SignUpViewController.swift in Sources */,
 				AC85F5CC226C02DC00A3E213 /* TabBarController.swift in Sources */,
 				AC4B5055227E87F700ED8193 /* SignInViewController.swift in Sources */,
 				ACF08765226C264700F5976A /* Filter.swift in Sources */,
