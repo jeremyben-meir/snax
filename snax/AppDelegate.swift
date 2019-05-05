@@ -54,7 +54,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             
             }
-            window?.rootViewController = TabBarController()
+            let email = user.profile.email
+            let firstName = user.profile.givenName
+            let lastName = user.profile.familyName
+            window?.rootViewController = TabBarController(email: email!, firstName: firstName!, lastName: lastName!)
+            //let idToken = user.authentication.idToken
+            //let userId = user.userID
+            //let fullName = user.profile.name
+            NetworkManager.loginGet(email: email!, completion: { user in
+                if (user == nil){
+                    print("ADD USER")
+                    NetworkManager.createUserPost(firstName: firstName!, lastName: lastName!, email: email!, completion: { _ in
+                    })
+                } else {
+                    print(user)
+                }
+            })
         }
     
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

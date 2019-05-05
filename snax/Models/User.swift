@@ -9,18 +9,23 @@ import Foundation
 
 struct User: Codable {
     var id: Int
-    var name: String
-    var orders: Int
-    
-    
-//
-//    var email: String
-//    var idToken: String
-//    var fullName: String
-//    var givenName: String
-//    var familyName: String
+    var firstName: String
+    var lastName: String
+    var email: String
+    var orders: [Order]
 }
 
 struct CreateUserResponse: Codable {
     var data: User
+}
+
+struct GetUserResponse: Codable {
+    var data: User
+}
+
+struct Order: Codable {
+    var id: Int
+    var matched: Bool
+    var placed: Bool
+    var food: [MenuItem]
 }
