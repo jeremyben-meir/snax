@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             [0, 0, 0, 0], [8, 0, 18, 0], [8, 0, 18, 0], [8, 0, 18, 0],
             [8, 0, 18, 0], [8, 0, 18, 0], [10, 0, 17, 0]
             ], id:3))
-        restaurantArray.append(Restaurant(image: UIImage(named: "ctb")!, name: "Collegetown Bagels", tags: ["Breakfast", "Lunch", "Dinner", "Sandwiches", "Desserts"], price: 15, times: [
+        restaurantArray.append(Restaurant(image: UIImage(named: "ctb")!, name: "College Town Bagels", tags: ["Breakfast", "Lunch", "Dinner", "Sandwiches", "Desserts"], price: 15, times: [
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],
             [6, 45, 24, 0, 0, 0, 1, 30], [6, 45, 24, 0, 0, 0, 1, 30],

@@ -16,6 +16,7 @@ class MenuItemViewController: UIViewController {
     var menuItemLabel: UILabel!
     var priceLabel: UILabel!
     var descLabel: UILabel!
+    var quantityLabel: UILabel!
     
     var name: String!
     var desc: String!
@@ -76,6 +77,12 @@ class MenuItemViewController: UIViewController {
         descLabel.text = self.desc
         view.addSubview(descLabel)
         
+        quantityLabel = UILabel()
+        quantityLabel.translatesAutoresizingMaskIntoConstraints = false
+        quantityLabel.font = UIFont(name: "Avenir-Book-Bold", size: 10)
+        quantityLabel.text = "Quantity"
+        view.addSubview(quantityLabel)
+        
         setupConstraints()
     }
     
@@ -105,6 +112,10 @@ class MenuItemViewController: UIViewController {
         NSLayoutConstraint.activate([
             descLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             descLabel.topAnchor.constraint(equalTo: menuItemLabel.bottomAnchor, constant: 8),
+            ])
+        NSLayoutConstraint.activate([
+            quantityLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            quantityLabel.topAnchor.constraint(equalTo: descLabel.bottomAnchor, constant: 8),
             ])
     }
     @objc func dismissViewControllerAndSaveText(){
