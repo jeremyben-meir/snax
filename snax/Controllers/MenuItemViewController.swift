@@ -192,7 +192,7 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func dismissViewControllerAndAddToCart(){
-        var activeOrderId: Int!
+        var activeOrderId: Int! = -1
         NetworkManager.getActiveOrder(email: email!) { (id) in
             activeOrderId = id
         }
