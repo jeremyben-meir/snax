@@ -12,7 +12,7 @@ import GooglePlaces
 import CoreLocation
 
 
-class DeliveryViewController: ViewController {
+class DeliveryViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?

@@ -26,6 +26,20 @@ struct GetUserResponse: Codable {
 struct Order: Codable {
     var id: Int
     var matched: Bool
+    var orderer: Orderer?
     var placed: Bool
     var food: [MenuItem]
+    var deliverer: Deliverer?
+}
+
+struct Orderer: Codable {
+    var id: Int
+    var firstName: String
+    var lastName: String
+    var email: String
+    var orders: [Order]
+}
+
+struct Deliverer: Codable {
+    
 }

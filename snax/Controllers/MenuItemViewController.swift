@@ -28,13 +28,18 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
     var desc: String!
     var price: CGFloat!
     var calculatedPrice: CGFloat!
+    var restaurantName: String!
+    
+    var email: String!
     
     let snaxcolor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
     
-    init(name: String, desc: String, price: CGFloat){
+    init(name: String, desc: String, price: CGFloat, email: String, restaurantName: String){
         self.name = name
         self.price = price
         self.desc = desc
+        self.email = email
+        self.restaurantName = restaurantName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -56,7 +61,7 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
         goBackButton.translatesAutoresizingMaskIntoConstraints = false 
         goBackButton.setTitle("Go back", for: .normal)
         goBackButton.setTitleColor(.black, for: .normal)
-        goBackButton.addTarget(self, action: #selector(dismissViewControllerAndSaveText), for: .touchUpInside)
+        goBackButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
         view.addSubview(goBackButton)
         
         addButton = UIButton()
@@ -182,12 +187,25 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
             addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor)
             ])
     }
-    @objc func dismissViewControllerAndSaveText(){
+    @objc func dismissViewController(){
         dismiss(animated: true, completion: nil)
     }
     
     @objc func dismissViewControllerAndAddToCart(){
-        
+        var activeOrderId: Int!
+        NetworkManager.getActiveOrder(email: email!) { (id) in
+            activeOrderId = id
+        }
+        if (activeOrderId == -1){
+            NetworkManager.createOrderPost(email: email!, completion: { order in
+                activeOrderId = order.id
+            })
+            NetworkManager.addFoodToCart(restaurantName: restaurantName, foodName: name, price: price, orderId: activeOrderId) {_ in
+            }
+        } else {
+            NetworkManager.addFoodToCart(restaurantName: restaurantName, foodName: name, price: price, orderId: activeOrderId) {_ in
+            }
+        }
         dismiss(animated: true, completion: nil)
     }
     

@@ -16,3 +16,18 @@ struct CreateOrderDataResponse: Codable{
     var order: Order
 }
 
+struct GetActiveOrderResponse: Codable{
+    var data: GetActiveOrderDataResponse
+}
+
+struct GetActiveOrderDataResponse: Codable{
+    var id: Int
+}
+
+struct AddFoodToOrderResponse: Codable{
+    var data: AddFoodToOrderDataResponse
+}
+
+struct AddFoodToOrderDataResponse: Codable{
+    var order: Order
+}

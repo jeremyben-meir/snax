@@ -35,7 +35,7 @@ class TabBarController: UITabBarController {
         cartViewController.tabBarItem = UITabBarItem.init(title: "My Cart", image: UIImage(named: "cart"), tag: 0)
         let accountViewController = AccountViewController(email: email, firstName: firstName, lastName: lastName)
         accountViewController.tabBarItem = UITabBarItem.init(title: "Account", image: UIImage(named: "acct"), tag: 1)
-        let restaurantViewController = ViewController()
+        let restaurantViewController = ViewController(email: email)
         restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest"), tag: 2)
         let deliveryViewController = DeliveryViewController()
         deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "deliver"), tag: 3)

@@ -20,12 +20,13 @@ class DetailViewController: UIViewController {
     var times: [[Int]]
     var isOpen: Bool
     var menu: [MenuItem]
+    var email: String
     
     var tableView: UITableView!
     let reuseidentifier = "menuItemCellReuse"
     let cellHeight: CGFloat = 50
     
-    init(image: UIImage, name: String, tags: [String], priceImage: UIImage, times: [[Int]], isOpen: Bool, menu: [MenuItem]){
+    init(image: UIImage, name: String, tags: [String], priceImage: UIImage, times: [[Int]], isOpen: Bool, menu: [MenuItem], email: String){
         self.image = image
         self.name = name
         self.tags = tags
@@ -33,6 +34,7 @@ class DetailViewController: UIViewController {
         self.times = times
         self.isOpen = isOpen
         self.menu = menu
+        self.email = email
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -259,7 +261,7 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Menu item was selected")
         print(menu[indexPath.row].name)
-        let menuItemViewController = MenuItemViewController(name: menu[indexPath.row].name, desc: menu[indexPath.row].description ?? "", price: menu[indexPath.row].price)
+        let menuItemViewController = MenuItemViewController(name: menu[indexPath.row].name, desc: menu[indexPath.row].description ?? "", price: menu[indexPath.row].price, email: email, restaurantName: name)
         menuItemViewController.modalPresentationCapturesStatusBarAppearance = true
         present(menuItemViewController, animated: true, completion: nil)
     }

@@ -26,6 +26,15 @@ class ViewController: UIViewController {
     let restaurantCellReuseIdentifier = "restaurantCellReuseIdentifier"
     let padding: CGFloat = 8
     
+    var email: String
+    
+    init(email: String) {
+        self.email = email
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,7 +269,7 @@ extension ViewController: UICollectionViewDelegate {
             restaurantCollection.reloadData()
         } else {
             let restaurant = filteredArray[indexPath.item]
-            let detailViewController = DetailViewController(image: restaurant.image!, name: restaurant.name, tags: restaurant.tags, priceImage: restaurant.priceImage!, times: restaurant.times, isOpen: restaurant.isOpen, menu: restaurant.menu)
+            let detailViewController = DetailViewController(image: restaurant.image!, name: restaurant.name, tags: restaurant.tags, priceImage: restaurant.priceImage!, times: restaurant.times, isOpen: restaurant.isOpen, menu: restaurant.menu, email: email)
             navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

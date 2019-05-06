@@ -67,56 +67,6 @@ class NetworkManager {
         }
     }
     
-//    //Send post request when order is placed.
-//    static func sendOrder(user id: Int, completion: @escaping (User) -> Void) {
-//        Alamofire.request("http://35.236.231.84/api/snax/placeorder/", method: .post).validate().responseData { (response) in
-//            switch response.result {
-//            case .success(let data):
-//                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-//                    print(json)
-//                }
-//                let jsonDecoder = JSONDecoder()
-//                if let placeOrderResponse = try? jsonDecoder.decode(RestaurantMenuItemResponse.self, from: data) {
-//                    let menu = restaurantMenuItemResponse.data
-//                    completion(menu)
-//                } else {
-//                    print("Invalid Response Data")
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
-    
-    
-//    static func loginPost(userID: String, idToken: String, name: String, givenName: String, familyName: String, email: String, completion: @escaping (User) -> Void) {
-//        let parameters: [String: Any] = [
-//            "userId": userID,
-//            "idToken": idToken,
-//            "fullName": name,
-//            "givenName": givenName,
-//            "familyName": familyName,
-//            "email": email
-//        ]
-//        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
-//            switch response.result {
-//            case .success(let data):
-//                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-//                    print(json)
-//                }
-//                let jsonDecoder = JSONDecoder()
-//                if let user = try? jsonDecoder.decode(User.self, from: data) {
-//                    completion(user)
-//                } else {
-//                    print("Invalid Response Data")
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
     static func loginGet(email: String, completion: @escaping (User?) -> Void) {
         Alamofire.request("http://35.236.231.84/api/snax/user/\(email)", method: .get).validate().responseData { (response) in
             switch response.result {
@@ -157,6 +107,53 @@ class NetworkManager {
             }
         }
     }
+    
+    static func addFoodToCart(restaurantName: String, foodName: String, price: CGFloat, orderId: Int, completion: @escaping (Order) -> Void) {
+        let parameters: [String: Any] = [
+            "restaurantName": restaurantName,
+            "foodName": foodName,
+            "price": price
+        ]
+        Alamofire.request("http://35.236.231.84/api/snax/order/food/\(orderId)/", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                let jsonDecoder = JSONDecoder()
+                if let addFoodToOrderResponse = try? jsonDecoder.decode(AddFoodToOrderResponse.self, from: data) {
+                    let order = addFoodToOrderResponse.data.order
+                    completion(order)
+                } else {
+                    print("Invalid Response Data")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    static func getActiveOrder(email: String, completion: @escaping (Int) -> Void) {
+        Alamofire.request("", method: .get).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                let jsonDecoder = JSONDecoder()
+                if let getActiveOrderResponse = try? jsonDecoder.decode(GetActiveOrderResponse.self, from: data) {
+                    completion(getActiveOrderResponse.data.id)
+                } else {
+                    print("Invalid Response Data")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                print("get error")
+                completion(-1)
+            }
+        }
+    }
+    
 }
 
 
