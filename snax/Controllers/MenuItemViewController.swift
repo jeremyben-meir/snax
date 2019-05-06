@@ -158,26 +158,28 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
             
             ])
         NSLayoutConstraint.activate([
-            quantityLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            quantityLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             quantityLabel.topAnchor.constraint(equalTo: descLabel.bottomAnchor, constant: 8),
             ])
-        NSLayoutConstraint.activate([
-            addButton.leadingAnchor.constraint(equalTo: quantityLabel.trailingAnchor, constant: 8),
-            addButton.centerYAnchor.constraint(equalTo: quantityLabel.centerYAnchor),
-            addButton.widthAnchor.constraint(equalToConstant: 30),
-            addButton.heightAnchor.constraint(equalToConstant: 30)
-            ])
-        NSLayoutConstraint.activate([
-            subtractButton.leadingAnchor.constraint(equalTo: addButton.trailingAnchor, constant: 8),
-            subtractButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
-            subtractButton.widthAnchor.constraint(equalToConstant: 30),
-            subtractButton.heightAnchor.constraint(equalToConstant: 30)
-            ])
+        
         NSLayoutConstraint.activate([
             quantityField.leadingAnchor.constraint(equalTo: quantityLabel.leadingAnchor),
             quantityField.trailingAnchor.constraint(equalTo: quantityLabel.trailingAnchor),
             quantityField.heightAnchor.constraint(equalToConstant: 20),
             quantityField.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 8),
+            ])
+        
+        NSLayoutConstraint.activate([
+            subtractButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            subtractButton.topAnchor.constraint(equalTo: quantityLabel.topAnchor),
+            subtractButton.heightAnchor.constraint(equalToConstant: 45),
+            subtractButton.widthAnchor.constraint(equalTo: subtractButton.heightAnchor)
+            ])
+        NSLayoutConstraint.activate([
+            addButton.topAnchor.constraint(equalTo: subtractButton.topAnchor),
+            addButton.heightAnchor.constraint(equalToConstant: 45),
+            addButton.trailingAnchor.constraint(equalTo: subtractButton.leadingAnchor, constant: -8),
+            addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor)
             ])
     }
     @objc func dismissViewControllerAndSaveText(){
