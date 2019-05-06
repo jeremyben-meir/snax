@@ -32,13 +32,13 @@ class TabBarController: UITabBarController {
         view.backgroundColor = .white
         
         let cartViewController = CartViewController()
-        cartViewController.tabBarItem = UITabBarItem.init(title: "My Cart", image: UIImage(named: "cart_40"), tag: 0)
+        cartViewController.tabBarItem = UITabBarItem.init(title: "My Cart", image: UIImage(named: "cart"), tag: 0)
         let accountViewController = AccountViewController(email: email, firstName: firstName, lastName: lastName)
-        accountViewController.tabBarItem = UITabBarItem.init(title: "Account", image: UIImage(named: "acct_40"), tag: 1)
+        accountViewController.tabBarItem = UITabBarItem.init(title: "Account", image: UIImage(named: "acct"), tag: 1)
         let restaurantViewController = ViewController()
-        restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest_40"), tag: 2)
+        restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest"), tag: 2)
         let deliveryViewController = DeliveryViewController()
-        deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "deliver_40"), tag: 3)
+        deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "deliver"), tag: 3)
         
         UITabBar.appearance().tintColor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
         
