@@ -47,6 +47,8 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
         title = "placeholder title"
         view.backgroundColor = .white
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
         calculatedPrice = price
         
         goBackButton = UIButton()
@@ -119,6 +121,7 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
         quantityField.textAlignment = .center
         quantityField.keyboardType = .numberPad
         quantityField.delegate = self
+        quantityField.returnKeyType = .done
         quantityField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         view.addSubview(quantityField)
         
@@ -217,8 +220,10 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
         priceLabel.text = "$\(CGFloat(round(self.calculatedPrice!*100)/100))"
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        quantityField.resignFirstResponder()
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
         return true
     }
 
