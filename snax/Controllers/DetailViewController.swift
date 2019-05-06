@@ -258,7 +258,8 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Menu item was selected")
-        let menuItemViewController = MenuItemViewController()
+        print(menu[indexPath.row].name)
+        let menuItemViewController = MenuItemViewController(name: menu[indexPath.row].name, desc: menu[indexPath.row].description ?? "", price: menu[indexPath.row].price)
         menuItemViewController.modalPresentationCapturesStatusBarAppearance = true
         present(menuItemViewController, animated: true, completion: nil)
     }
