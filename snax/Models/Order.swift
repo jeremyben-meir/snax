@@ -17,17 +17,11 @@ struct CreateOrderDataResponse: Codable{
 }
 
 struct GetActiveOrderResponse: Codable{
-    var data: GetActiveOrderDataResponse
-}
-
-struct GetActiveOrderDataResponse: Codable{
-    var id: Int
+    var success: Bool
+    var order: Order?
 }
 
 struct AddFoodToOrderResponse: Codable{
-    var data: AddFoodToOrderDataResponse
-}
-
-struct AddFoodToOrderDataResponse: Codable{
-    var order: Order
+    var success: Bool
+    var data: MenuItem
 }

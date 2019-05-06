@@ -11,6 +11,7 @@
 		21001816227230F200DD15D8 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21001815227230F200DD15D8 /* MenuItem.swift */; };
 		210D6C262272971C00349C9D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C252272971C00349C9D /* NetworkManager.swift */; };
 		210D6C282272985D00349C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D6C272272985D00349C9D /* User.swift */; };
+		2112DE412280C23200AEC2E6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2112DE402280C23200AEC2E6 /* CartTableViewCell.swift */; };
 		216B808322725D8A0096998D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 216B808222725D8A0096998D /* credentials.plist */; };
 		AC4B5055227E87F700ED8193 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B5054227E87F700ED8193 /* SignInViewController.swift */; };
 		AC50DABD2273AF6800AF458A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		21001815227230F200DD15D8 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		210D6C252272971C00349C9D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		210D6C272272985D00349C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2112DE402280C23200AEC2E6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableViewCell.swift; path = snax/Cells/CartTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		216B808222725D8A0096998D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		21B2B73464A707DD92E91D3C /* Pods-snax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.release.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.release.xcconfig"; sourceTree = "<group>"; };
 		AC399BE17291B87BCB8B310D /* Pods-snax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snax.debug.xcconfig"; path = "Target Support Files/Pods-snax/Pods-snax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		ACF08764226C264700F5976A /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
-		ACF08770226C286E00F5976A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACF08770226C286E00F5976A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		E509ACD6BB142BA00D93B68C /* Pods_snax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		211E32FC227249DF0070A901 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2112DE402280C23200AEC2E6 /* CartTableViewCell.swift */,
 				AC50DABC2273AF6800AF458A /* DetailTableViewCell.swift */,
 				ACF0876E226C280C00F5976A /* RestaurantCollectionViewCell.swift */,
 				ACF08766226C269900F5976A /* FilterCollectionViewCell.swift */,
@@ -335,6 +338,7 @@
 				210D6C282272985D00349C9D /* User.swift in Sources */,
 				AC50DABF2273D31100AF458A /* MenuItemViewController.swift in Sources */,
 				ACB374E322802FC700D84E5F /* Order.swift in Sources */,
+				2112DE412280C23200AEC2E6 /* CartTableViewCell.swift in Sources */,
 				ACF08771226C286E00F5976A /* DetailViewController.swift in Sources */,
 				AC85F5B4226C00A200A3E213 /* ViewController.swift in Sources */,
 				210D6C262272971C00349C9D /* NetworkManager.swift in Sources */,

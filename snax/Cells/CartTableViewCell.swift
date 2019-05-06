@@ -1,14 +1,14 @@
 //
-//  DetailTableViewCell.swift
+//  CartTableViewCell.swift
 //  snax
 //
-//  Created by Jessica Yuan on 4/26/19.
+//  Created by Jeremy Ben-Meir on 5/6/19.
 //  Copyright © 2019 Jessica Yuan. All rights reserved.
 //
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class CartTableViewCell: UITableViewCell {
 
     var menuItemNameLabel: UILabel!
     var menuItemDescriptionLabel: UILabel!
@@ -28,11 +28,9 @@ class DetailTableViewCell: UITableViewCell {
         menuItemDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         menuItemDescriptionLabel.font = UIFont(name: "Avenir-Book", size: 12)
         menuItemDescriptionLabel.textColor = .gray
-        //menuItemDescriptionLabel.preferredMaxLayoutWidth = 100
-        //menuItemDescriptionLabel.adjustsFontSizeToFitWidth = true
         menuItemDescriptionLabel.lineBreakMode = .byTruncatingTail
         menuItemDescriptionLabel.numberOfLines = 1
-
+        
         contentView.addSubview(menuItemDescriptionLabel)
         
         menuItemPriceLabel = UILabel()
@@ -58,7 +56,7 @@ class DetailTableViewCell: UITableViewCell {
             ])
         NSLayoutConstraint.activate([
             menuItemPriceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-           menuItemPriceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            menuItemPriceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
             ])
     }
     
@@ -67,16 +65,8 @@ class DetailTableViewCell: UITableViewCell {
     }
     
     func configure(for menuitem : MenuItem){
-            menuItemNameLabel.text = menuitem.name
-            menuItemPriceLabel.text = "$\(menuitem.price)"
-            menuItemDescriptionLabel.text = menuitem.description
+        menuItemNameLabel.text = menuitem.name
+        menuItemPriceLabel.text = "$\(menuitem.price)"
+        menuItemDescriptionLabel.text = menuitem.description
     }
-
 }
-    
-
-    
-        // Configure the view for the selected state
-
-
-

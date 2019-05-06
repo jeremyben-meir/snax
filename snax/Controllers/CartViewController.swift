@@ -16,6 +16,18 @@ class CartViewController: UIViewController {
     var tableView: UITableView!
     var placeOrderButton: UIButton!
     let cartreuseidentifier = "cartItemCellReuse"
+    
+    var email: String
+    var foodList: [MenuItem] = []
+    
+    init(email: String) {
+        self.email = email
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +36,9 @@ class CartViewController: UIViewController {
         
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CartTableViewCell.self, forCellReuseIdentifier: cartreuseidentifier)
         view.addSubview(tableView)
         
         placeOrderButton = UIButton()
@@ -35,7 +50,7 @@ class CartViewController: UIViewController {
         
         
         setupConstraints()
-        
+        getCartItems(email: email)
        
 
         // Do any additional setup after loading the view.
@@ -57,18 +72,53 @@ class CartViewController: UIViewController {
             ])
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getCartItems(email: String){
+        NetworkManager.getActiveOrder(email: email) { (orderResponse) in
+            if (orderResponse != nil){
+                self.foodList = orderResponse!.food
+            } else {
+                self.foodList = []
+            }
+            print(self.foodList)
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+    
     @objc func placeOrder(){
         
     }
     
 
+}
+
+extension CartViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foodList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("Section: \(indexPath.section), row \(indexPath.row)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: cartreuseidentifier, for: indexPath) as! CartTableViewCell
+        let item = foodList[indexPath.row]
+        cell.configure(for: item)
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+}
+
+extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Food item was selected")
+//        print(foodList[indexPath.row].name)
+//        let menuItemViewController = MenuItemViewController(name: menu[indexPath.row].name, desc: menu[indexPath.row].description ?? "", price: menu[indexPath.row].price, email: email, restaurantName: name)
+//        menuItemViewController.modalPresentationCapturesStatusBarAppearance = true
+//        present(menuItemViewController, animated: true, completion: nil)
+    }
 }
