@@ -46,7 +46,7 @@ class TabBarController: UITabBarController {
         let viewControllerList = [accountViewController, restaurantViewController, cartViewController, deliveryViewController]
         //viewControllers = viewControllerList
         viewControllers = viewControllerList.map{ UINavigationController(rootViewController: $0) }
-        UINavigationBar.appearance().prefersLargeTitles = true
+        //UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().tintColor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
 
         // Do any additional setup after loading the view.
