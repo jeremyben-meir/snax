@@ -1,8 +1,11 @@
 # snax
 1) App Name: Snax
 2) App Tagline: Students Order, Students Deliver 
-3) Link to Backend: 
+3) Link to Backend: https://github.com/seancorc/snax-backend
 4) Screenshots:
+
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
 5) Short Description of App: Purpose and features
 	Purpose: To lower the barrier of entry to the job market, specifically the food delivery market through seamless switching between ordering and delivering.
@@ -26,7 +29,9 @@ controllers also implemented with actions such as button push.
 -Integration with an API - this API must provide some meaningful value to your app. For example, if you’re creating a music app, you could use the Apple Music API. Most of you will integrate with an API written by students in the backend course.
 We integrated with an API written by students in backend, as well as with the Google Sign In API. We used the Google Sign In API to log in using a google account and retrieve basic information about the user. We stored some of that information 
 into our personal backend database and added user specific information based on 
-their activity in the app (i.e. order number, ordered items, a unique id).
+their activity in the app (i.e. order number, ordered items, a unique id). We also use the backend database by making a get request for the menu of each restaurant, and loading these menu items into a UITableView. 
+Ideally, we use our backend database to make a number of get/post requests, such as creating users, getting users, getting menus, etc.
+
 
 7) Other Comments: 
 We know we have yet to integrate a number of features. For example, we want only those with Cornell.edu addresses should be able to access the app. 
