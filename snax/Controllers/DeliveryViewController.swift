@@ -26,13 +26,19 @@ class DeliveryViewController: UIViewController {
     
     // The currently selected place.
     var selectedPlace: GMSPlace?
-    
+    var switchItem: UISwitch!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.title = "Delivery"
+        
+        switchItem = UISwitch()
+        switchItem.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(switchItem)
+        
+        self.navigationItem.titleView = switchItem
         
         let locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()

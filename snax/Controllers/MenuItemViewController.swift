@@ -160,13 +160,11 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
             descLabel.topAnchor.constraint(equalTo: menuItemLabel.bottomAnchor, constant: 0),
             descLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             descLabel.heightAnchor.constraint(equalToConstant: 50),
-            
             ])
         NSLayoutConstraint.activate([
             quantityLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             quantityLabel.topAnchor.constraint(equalTo: descLabel.bottomAnchor, constant: 8),
             ])
-        
         NSLayoutConstraint.activate([
             quantityField.leadingAnchor.constraint(equalTo: quantityLabel.leadingAnchor),
             quantityField.trailingAnchor.constraint(equalTo: quantityLabel.trailingAnchor),
@@ -192,18 +190,16 @@ class MenuItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func dismissViewControllerAndAddToCart(){
-        var activeOrderId: Int! = -1
-        NetworkManager.getActiveOrder(email: email!) { (id) in
-            activeOrderId = id
-        }
-        if (activeOrderId == -1){
-            NetworkManager.createOrderPost(email: email!, completion: { order in
-                activeOrderId = order.id
-            })
-            NetworkManager.addFoodToCart(restaurantName: restaurantName, foodName: name, price: price, orderId: activeOrderId) {_ in
+        var activeOrderId = -1
+        NetworkManager.getActiveOrder(email: email!) { (orderResponse) in
+            if (orderResponse == nil){
+                NetworkManager.createOrderPost(email: self.email!, completion: { newOrder in
+                    activeOrderId = newOrder.id
+                })
+            } else {
+                activeOrderId = orderResponse!.id
             }
-        } else {
-            NetworkManager.addFoodToCart(restaurantName: restaurantName, foodName: name, price: price, orderId: activeOrderId) {_ in
+            NetworkManager.addFoodToCart(restaurantName: self.restaurantName, foodName: self.name, orderId: activeOrderId) {_ in
             }
         }
         dismiss(animated: true, completion: nil)
