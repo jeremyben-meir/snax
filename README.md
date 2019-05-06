@@ -4,8 +4,12 @@
 3) Link to Backend: https://github.com/seancorc/snax-backend
 4) Screenshots:
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img0.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img1.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img3.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img4.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img5.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img6.png)
 
 5) Short Description of App: Purpose and features
 	Purpose: To lower the barrier of entry to the job market, specifically the food delivery market through seamless switching between ordering and delivering.
