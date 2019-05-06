@@ -12,18 +12,32 @@ class MenuItemViewController: UIViewController {
     
     var goBackButton: UIButton!
     var addtoCartButton: UIButton!
-    var MenuItemLabel: UILabel!
+    
+    var menuItemLabel: UILabel!
+    var priceLabel: UILabel!
+    var descLabel: UILabel!
+    
+    var name: String!
+    var desc: String!
+    var price: CGFloat!
     
     let snaxcolor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
+    
+    init(name: String, desc: String, price: CGFloat){
+        self.name = name
+        self.price = price
+        self.desc = desc
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "placeholder title"
         view.backgroundColor = .white
-        
-        MenuItemLabel = UILabel()
-        MenuItemLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         
         goBackButton = UIButton()
         goBackButton.setImage(UIImage(named: "xxx"), for: .normal)
@@ -41,9 +55,28 @@ class MenuItemViewController: UIViewController {
         addtoCartButton.addTarget(self, action: #selector(dismissViewControllerAndAddToCart), for: .touchUpInside)
         view.addSubview(addtoCartButton)
         
+        menuItemLabel = UILabel()
+        menuItemLabel.translatesAutoresizingMaskIntoConstraints = false
+        menuItemLabel.font = UIFont(name: "Avenir-Book-Bold", size: 30)
+        menuItemLabel.numberOfLines = 1
+        menuItemLabel.text = self.name
+        view.addSubview(menuItemLabel)
+        
+        priceLabel = UILabel()
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.font = UIFont(name: "Avenir-Book-Bold", size: 10)
+        priceLabel.numberOfLines = 1
+        priceLabel.text = "$\(self.price!)"
+        view.addSubview(priceLabel)
+        
+        descLabel = UILabel()
+        descLabel.translatesAutoresizingMaskIntoConstraints = false
+        descLabel.font = UIFont(name: "Avenir-Book-Bold", size: 10)
+        descLabel.textColor = .gray
+        descLabel.text = self.desc
+        view.addSubview(descLabel)
+        
         setupConstraints()
-
-        // Do any additional setup after loading the view.
     }
     
     func setupConstraints() {
@@ -59,7 +92,20 @@ class MenuItemViewController: UIViewController {
             addtoCartButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             addtoCartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             addtoCartButton.widthAnchor.constraint(equalTo: view.widthAnchor)])
-
+        NSLayoutConstraint.activate([
+            menuItemLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            menuItemLabel.topAnchor.constraint(equalTo: goBackButton.bottomAnchor, constant: 8),
+            //menuItemLabel.widthAnchor.constraint(equalToConstant: 20),
+            //menuItemLabel.heightAnchor.constraint(equalToConstant: 20)
+            ])
+        NSLayoutConstraint.activate([
+            priceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            priceLabel.topAnchor.constraint(equalTo: goBackButton.bottomAnchor, constant: 8),
+            ])
+        NSLayoutConstraint.activate([
+            descLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            descLabel.topAnchor.constraint(equalTo: menuItemLabel.bottomAnchor, constant: 8),
+            ])
     }
     @objc func dismissViewControllerAndSaveText(){
         dismiss(animated: true, completion: nil)
