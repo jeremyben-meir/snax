@@ -12,12 +12,18 @@ class MenuItemViewController: UIViewController {
     
     var goBackButton: UIButton!
     var addtoCartButton: UIButton!
+    var MenuItemLabel: UILabel!
+    
     let snaxcolor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "placeholder title"
         view.backgroundColor = .white
+        
+        MenuItemLabel = UILabel()
+        MenuItemLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         
         goBackButton = UIButton()
         goBackButton.setImage(UIImage(named: "xxx"), for: .normal)
