@@ -6,6 +6,7 @@
 
 ![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img0.png)
 ![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img1.png)
+![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img2.png)
 ![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img3.png)
 ![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img4.png)
 ![alt text](https://github.com/jsb459/snax/blob/master/screenshots/img5.png)
