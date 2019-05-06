@@ -32,7 +32,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
             imageView.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -10),
             imageView.widthAnchor.constraint(equalToConstant: 150)
             ])

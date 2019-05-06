@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             ], id:0
             ))
             
-        restaurantArray.append(Restaurant(image: UIImage(named: "mattins")!, name: "Mattin's Cafe", tags: ["Breakfast", "Lunch", "American", "Sandwiches"], price: 6, times: [
+        restaurantArray.append(Restaurant(image: UIImage(named: "mattins")!, name: "Mattins", tags: ["Breakfast", "Lunch", "American", "Sandwiches"], price: 6, times: [
             [0, 0, 0, 0], [7, 0, 22, 0], [7, 0, 20, 0], [7, 0, 20, 0],
             [7, 0, 20, 0], [7, 0, 17, 0], [0, 0, 0, 0]
             ], id:1

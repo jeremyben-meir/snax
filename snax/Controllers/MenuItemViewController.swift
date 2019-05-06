@@ -20,6 +20,7 @@ class MenuItemViewController: UIViewController {
         view.backgroundColor = .white
         
         goBackButton = UIButton()
+        goBackButton.setImage(UIImage(named: "xxx"), for: .normal)
         goBackButton.translatesAutoresizingMaskIntoConstraints = false 
         goBackButton.setTitle("Go back", for: .normal)
         goBackButton.setTitleColor(.black, for: .normal)
@@ -41,13 +42,15 @@ class MenuItemViewController: UIViewController {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            goBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
-            goBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+            goBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 9),
+            goBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            goBackButton.widthAnchor.constraint(equalToConstant: 20),
+            goBackButton.heightAnchor.constraint(equalToConstant: 20)
             ])
         NSLayoutConstraint.activate([
-            addtoCartButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:2),
+            addtoCartButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             addtoCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            addtoCartButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            addtoCartButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             addtoCartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             addtoCartButton.widthAnchor.constraint(equalTo: view.widthAnchor)])
 

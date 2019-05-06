@@ -52,6 +52,7 @@ class DetailViewController: UIViewController {
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: reuseidentifier)
         view.addSubview(tableView)
         
+        UINavigationBar.appearance().prefersLargeTitles = false
         
         imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
