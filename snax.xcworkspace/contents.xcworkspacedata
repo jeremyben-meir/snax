@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Order.swift">
+   </FileRef>
+   <FileRef
       location = "group:snax.xcodeproj">
    </FileRef>
    <FileRef

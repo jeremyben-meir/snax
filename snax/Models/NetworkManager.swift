@@ -14,6 +14,7 @@ class NetworkManager {
     private static let restaurantEndpoint = "http://35.236.231.84/api/snax/restaurants/"
     private static let createUserEndpoint = "http://35.236.231.84/api/snax/users/"
     private static let getUserEndpoint = "http://35.236.231.84/api/snax/user/"
+   
     
     //RestaurantMenuItemDataReponse is a list of menu items
     //Gets the list of menu items for the restaurant named name
@@ -38,35 +39,7 @@ class NetworkManager {
             }
         }
     }
-    
-//    static func createOrderPost(food: MenuItem, idToken: String, name: String, givenName: String, familyName: String, email: String, completion: @escaping (User) -> Void) {
-//        let parameters: [String: Any] = [
-//            "userId": userID,
-//            "idToken": idToken,
-//            "fullName": name,
-//            "givenName": givenName,
-//            "familyName": familyName,
-//            "email": email
-//        ]
-//        Alamofire.request(createUserEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
-//            switch response.result {
-//            case .success(let data):
-//                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-//                    print(json)
-//                }
-//                let jsonDecoder = JSONDecoder()
-//                if let user = try? jsonDecoder.decode(User.self, from: data) {
-//                    completion(user)
-//                } else {
-//                    print("Invalid Response Data")
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
-    
+
     static func createUserPost(firstName: String, lastName: String, email: String, completion: @escaping (User) -> Void) {
         let parameters: [String: Any] = [
             "firstName": firstName,
@@ -164,4 +137,26 @@ class NetworkManager {
             }
         }
     }
+    
+    static func createOrderPost(email: String, completion: @escaping (Order) -> Void) {
+        Alamofire.request("http://35.236.231.84/api/snax/\(email)/", method: .post).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                let jsonDecoder = JSONDecoder()
+                if let createOrderResponse = try? jsonDecoder.decode(CreateOrderResponse.self, from: data) {
+                   let order = createOrderResponse.data.order
+                    completion(order)
+                } else {
+                    print("Invalid Response Data")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
+
+

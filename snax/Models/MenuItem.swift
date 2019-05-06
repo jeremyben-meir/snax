@@ -21,25 +21,4 @@ struct MenuItem: Codable{
     var price: CGFloat
 }
 
-//enum ItemCategory {
-//    case breakfast
-//    case lunch
-//    case dinner
-//    case side
-//    case drink
-//}
-//struct MenuItem: Codable {
-//    var name: String
-//    var price: CGFloat
-//    var description: String
 
-    //var category: ItemCategory?
-    
-//    init(name: String, price: CGFloat, description: String, category: ItemCategory?){
-//        self.name = name
-//        self.price =  price
-//        self.description = description
-//        if let itemcategory: ItemCategory = category{
-//            self.category = itemcategory
-//        }
-//}
