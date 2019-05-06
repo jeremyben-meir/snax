@@ -38,7 +38,7 @@ class TabBarController: UITabBarController {
         let restaurantViewController = ViewController()
         restaurantViewController.tabBarItem = UITabBarItem.init(title: "Restaurants", image: UIImage(named: "rest"), tag: 2)
         let deliveryViewController = DeliveryViewController()
-        deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "rest"), tag: 3)
+        deliveryViewController.tabBarItem = UITabBarItem.init(title: "Delivery", image: UIImage(named: "deliver"), tag: 3)
         
         UITabBar.appearance().tintColor = UIColor(red: 31/255.0, green: 207/255.0, blue: 131/255.0, alpha: 1.0)
         
