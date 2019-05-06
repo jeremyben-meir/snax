@@ -21,17 +21,17 @@ class DetailTableViewCell: UITableViewCell {
         menuItemNameLabel.translatesAutoresizingMaskIntoConstraints = false
         menuItemNameLabel.font = UIFont(name: "Avenir-Book-Bold", size: 14)
         contentView.addSubview(menuItemNameLabel)
-        menuItemNameLabel.lineBreakMode = .byWordWrapping
-        menuItemNameLabel.numberOfLines = 0
+        menuItemNameLabel.lineBreakMode = .byTruncatingTail
+        menuItemNameLabel.numberOfLines = 1
         
         menuItemDescriptionLabel = UILabel()
         menuItemDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         menuItemDescriptionLabel.font = UIFont(name: "Avenir-Book", size: 12)
         menuItemDescriptionLabel.textColor = .gray
-        menuItemDescriptionLabel.preferredMaxLayoutWidth = 100
-        menuItemDescriptionLabel.adjustsFontSizeToFitWidth = true
-        menuItemDescriptionLabel.lineBreakMode = .byWordWrapping
-        menuItemDescriptionLabel.numberOfLines = 0
+        //menuItemDescriptionLabel.preferredMaxLayoutWidth = 100
+        //menuItemDescriptionLabel.adjustsFontSizeToFitWidth = true
+        menuItemDescriptionLabel.lineBreakMode = .byTruncatingTail
+        menuItemDescriptionLabel.numberOfLines = 1
 
         contentView.addSubview(menuItemDescriptionLabel)
         
@@ -47,20 +47,18 @@ class DetailTableViewCell: UITableViewCell {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             menuItemNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            menuItemNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             menuItemNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            menuItemNameLabel.heightAnchor.constraint(equalToConstant: 16)
+            menuItemNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
             ])
         NSLayoutConstraint.activate([
             menuItemDescriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            menuItemDescriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            menuItemDescriptionLabel.topAnchor.constraint(equalTo: menuItemNameLabel.bottomAnchor, constant: 2),
-            menuItemDescriptionLabel.heightAnchor.constraint(equalToConstant: 45)
+            menuItemDescriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
+            menuItemDescriptionLabel.topAnchor.constraint(equalTo: menuItemNameLabel.bottomAnchor, constant: -2),
+            menuItemDescriptionLabel.heightAnchor.constraint(equalToConstant: 20)
             ])
         NSLayoutConstraint.activate([
-            menuItemPriceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            menuItemPriceLabel.topAnchor.constraint(equalTo: menuItemDescriptionLabel.bottomAnchor, constant: 5),
-            menuItemPriceLabel.heightAnchor.constraint(equalToConstant: 16)
+            menuItemPriceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+           menuItemPriceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
             ])
     }
     

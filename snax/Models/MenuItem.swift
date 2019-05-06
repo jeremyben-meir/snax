@@ -14,10 +14,11 @@ struct RestaurantMenuItemResponse: Codable{
     
 }
 struct MenuItem: Codable{
+    var comments: String?
+    var description: String?
+    var id: Int
     var name: String
     var price: CGFloat
-    var description: String
-    
 }
 
 //enum ItemCategory {

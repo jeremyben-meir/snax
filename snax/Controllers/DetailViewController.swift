@@ -9,6 +9,7 @@ class DetailViewController: UIViewController {
     
     var imageView: UIImageView!
     var nameLabel: UILabel!
+    var menuLabel: UILabel!
     var openLabel: UILabel!
     var priceImageView: UIImageView!
     var tagLabel: UILabel!
@@ -22,7 +23,7 @@ class DetailViewController: UIViewController {
     
     var tableView: UITableView!
     let reuseidentifier = "menuItemCellReuse"
-    let cellHeight: CGFloat = 100
+    let cellHeight: CGFloat = 50
     
     init(image: UIImage, name: String, tags: [String], priceImage: UIImage, times: [[Int]], isOpen: Bool, menu: [MenuItem]){
         self.image = image
@@ -52,7 +53,7 @@ class DetailViewController: UIViewController {
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: reuseidentifier)
         view.addSubview(tableView)
         
-        UINavigationBar.appearance().prefersLargeTitles = false
+        //UINavigationBar.appearance().prefersLargeTitles = false
         
         imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,18 +95,19 @@ class DetailViewController: UIViewController {
         tagLabel.text = tagline
         view.addSubview(tagLabel)
         
+        menuLabel = UILabel()
+        menuLabel.translatesAutoresizingMaskIntoConstraints = false
+        menuLabel.textColor = .black
+        menuLabel.font =  UIFont(name: "Avenir-Book", size: 20)
+        menuLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+        menuLabel.text = "Menu"
+        view.addSubview(menuLabel)
         
         setupConstraints()
         getMenuItems(name: name)
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: tagLabel.topAnchor, constant: 20)
-            ])
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -130,7 +132,18 @@ class DetailViewController: UIViewController {
             tagLabel.topAnchor.constraint(equalTo: openLabel.bottomAnchor, constant: 2),
             tagLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: 1)
             ])
-        
+        NSLayoutConstraint.activate([
+            menuLabel.topAnchor.constraint(equalTo: tagLabel.bottomAnchor, constant: 8),
+            //menuLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
+            menuLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 10)
+            ])
+
     }
     
     func getMenuItems(name: String){
@@ -138,7 +151,7 @@ class DetailViewController: UIViewController {
             self.menu = menuitemArray
             DispatchQueue.main.async{
                 self.tableView.reloadData()
-        }
+            }
         }
     }
     
@@ -232,6 +245,7 @@ extension DetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! DetailTableViewCell
         let menuitem = menu[indexPath.row]
         cell.configure(for: menuitem)
+        cell.selectionStyle = .none
         return cell
     }
     
